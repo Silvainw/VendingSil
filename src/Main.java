@@ -11,12 +11,6 @@ public class Main {
     public static ArrayList<String> ProdID =new ArrayList<String>();
 
 
-    public void reset(){
-
-      ProdID = new ArrayList<String>();
-
-    }
-
     public static void main(String[] args) {
 
 
