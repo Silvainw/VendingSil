@@ -1,18 +1,16 @@
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
 
     public static final String ANSI_RED = "\u001B[31m";
     public static final String ANSI_RESET = "\u001B[0m";
-
-//arraylist aangemaakt
+    public static HashMap<String, Double> items = new HashMap<String, Double>();
     public static ArrayList<String> ProdID =new ArrayList<String>();
 
-
     public static void main(String[] args) {
-
 
         Scanner keyboard = new Scanner(System.in);
 
@@ -20,11 +18,11 @@ public class Main {
         {
 
 //Producten geadd aan de arraylist
-            ProdID.add("Broodje frikandel € 2,15");
-            ProdID.add("Snicker € 1,-");
-            ProdID.add("Mars € 1,05-");
-            ProdID.add("Cola € 1,20");
-            ProdID.add("Fanta € 1,10");
+            items.put("Broodje frikandel", 2.15);
+            items.put("Snicker", 1.00);
+            items.put("Mars", 1.05);
+            items.put("Cola", 1.20);
+            items.put("Fanta", 1.10);
         }
 
 
@@ -43,6 +41,9 @@ public class Main {
             int budget = 15;
             System.out.println("Wat wilt u bestellen? uw bedget is €" + budget);
             double price = keyboard.nextDouble();
+
+
+
 
             // vermedigvuldigd de prijs met het aantal artikelen
             System.out.println("Hoeveel wilt u er?  :");
