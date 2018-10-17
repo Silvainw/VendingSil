@@ -9,65 +9,79 @@ public class Main {
     public static final String ANSI_RESET = "\u001B[0m";
     public static HashMap<String, Double> items = new HashMap<String, Double>();
     public static ArrayList<String> ProdID =new ArrayList<String>();
+    public static ArrayList<String> ProdDrinken =new ArrayList<String>();
 
     public static void main(String[] args) {
 
-        Scanner keyboard = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
+        double[] cost = {2.15, 1.00, 1.00, 1.10, 1.10};
+
+
 
         int id;
         {
 
 //Producten geadd aan de arraylist
-            items.put("Broodje frikandel", 2.15);
-            items.put("Snicker", 1.00);
-            items.put("Mars", 1.05);
-            items.put("Cola", 1.20);
-            items.put("Fanta", 1.10);
+            ProdID.add("Broodje frikandel" + " " + " €" + cost[1] );
+            ProdID.add("Snicker" + " " + " €" + cost[2] );
+            ProdID.add("Mars €" + cost[3] );
+            ProdID.add("Cola" + " " + " €" + cost[4] );
+            ProdID.add("Fanta" + " " + " €" + cost[5] );
         }
 
 
         String answer;
         do {
 //print de eerste zinnetjes
-            System.out.println("Voer de prijs van het atikel in om hem te kopen.\n");
+            System.out.println("Voer het nummer in van het product.\n");
             System.out.println("Dit zijn onze artikelen: ");
 
 
 //print de arraylist
             for (int i = 0; i < ProdID.size(); i++) {
-                System.out.println(i + 1 + ". " + ProdID.get(i));
+                System.out.println(i + 1 + ". " + ProdID.get(i) );
             }
 
-            int budget = 15;
+
+            double budget = 15;
             System.out.println("Wat wilt u bestellen? uw bedget is €" + budget);
-            double price = keyboard.nextDouble();
+
+            int choice = sc.nextInt();
+            switch (choice) {
+
+                case 1:
+                    budget = 15-cost[1];
+                    System.out.println("Uw nieuwe budget is " + "€" + budget);
+                    //print de totale kosten die berekend zijn
+                    System.out.printf("Totale kosten : €%.2f\n", cost[1]);
+                    System.out.print("Werp het geld nu in.\n");
+                    System.out.println("----------");
+                    System.out.println("(=========)");
+                    System.out.println("----------");
 
 
+                break;
 
+                case 2:
+                budget = 15-cost[2];
+                System.out.println("Uw nieuwe budget is " + "€" + budget);
+                    //print de totale kosten die berekend zijn
+                    System.out.printf("Totale kosten : €%.2f\n", cost[2]);
+                    System.out.print("Werp het geld nu in.\n");
+                break;
 
-            // vermedigvuldigd de prijs met het aantal artikelen
-            System.out.println("Hoeveel wilt u er?  :");
-            int qty = keyboard.nextInt();
+            }
 
-            double total = price * qty;
-
-//print de totale kosten die berekend zijn
-            System.out.printf("Totale kosten : €%.2f\n", total);
-
-
-            if (total > 15) {
+            if (budget < 0) {
 //stopt met executen als het bedrag boven het budget is
                 System.out.println(ANSI_RED + "U heeft te weinig saldo!");
                 System.out.println("Neem uw geld terug." + ANSI_RESET);
                 System.exit(1);
 
-
             }
 
-            System.out.print("Werp het geld nu in.\n");
-
             System.out.println("wilt u nog iet kopen? Ja of Nee");
-            answer = keyboard.next();
+            answer = sc.next();
         }
         //zorgt ervoor dat als je Ja invoerd dat de do opnieuw start
         while (answer.equals("Ja")) ;
