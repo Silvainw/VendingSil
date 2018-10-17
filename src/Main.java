@@ -18,6 +18,7 @@ public class Main {
 
 
 
+
         int id;
         {
 
@@ -25,24 +26,38 @@ public class Main {
             ProdID.add("Broodje frikandel" + " " + " €" + cost[0] );
             ProdID.add("Snicker" + " " + " €" + cost[1] );
             ProdID.add("Mars €" + cost[2] );
-            ProdID.add("Cola" + " " + " €" + cost[3] );
-            ProdID.add("Fanta" + " " + " €" + cost[4] );
+            ProdDrinken.add("Cola" + " " + " €" + cost[3] );
+            ProdDrinken.add("Fanta" + " " + " €" + cost[4] );
         }
 
 
         String answer;
         do {
 //print de eerste zinnetjes
+            System.out.println("Goedendag\n");
+            System.out.println("Wilt u wat eten of drinken?");
+            System.out.println("1.Eten  2.Drinken");
+
+            Scanner scan = new Scanner(System.in);
+            int EtenDrinken = scan.nextInt();
+            //1 == Eten  2 == Drinken
+
             System.out.println("Voer het nummer in van het product.\n");
             System.out.println("Dit zijn onze artikelen: ");
 
 
-//print de arraylist
-            for (int i = 0; i < ProdID.size(); i++) {
-                System.out.println(i + 1 + ". " + ProdID.get(i) );
+//print de arraylist eten
+            if (EtenDrinken == 1) {
+                for (int i = 0; i < ProdID.size(); i++) {
+                    System.out.println(i + 1 + ". " + ProdID.get(i));
+                }
             }
-
-
+//print de arraylist drinken
+            if (EtenDrinken == 2) {
+                for (int i = 0; i < ProdDrinken.size(); i++) {
+                    System.out.println(i + 1 + ". " + ProdDrinken.get(i));
+                }
+            }
             double budget = 15;
             System.out.println("Wat wilt u bestellen? uw bedget is €" + budget);
 
