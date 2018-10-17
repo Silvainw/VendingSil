@@ -22,11 +22,11 @@ public class Main {
         {
 
 //Producten geadd aan de arraylist
-            ProdID.add("Broodje frikandel" + " " + " €" + cost[1] );
-            ProdID.add("Snicker" + " " + " €" + cost[2] );
-            ProdID.add("Mars €" + cost[3] );
-            ProdID.add("Cola" + " " + " €" + cost[4] );
-            ProdID.add("Fanta" + " " + " €" + cost[5] );
+            ProdID.add("Broodje frikandel" + " " + " €" + cost[0] );
+            ProdID.add("Snicker" + " " + " €" + cost[1] );
+            ProdID.add("Mars €" + cost[2] );
+            ProdID.add("Cola" + " " + " €" + cost[3] );
+            ProdID.add("Fanta" + " " + " €" + cost[4] );
         }
 
 
@@ -50,10 +50,10 @@ public class Main {
             switch (choice) {
 
                 case 1:
-                    budget = 15-cost[1];
+                    budget = 15-cost[0];
                     System.out.println("Uw nieuwe budget is " + "€" + budget);
                     //print de totale kosten die berekend zijn
-                    System.out.printf("Totale kosten : €%.2f\n", cost[1]);
+                    System.out.printf("Totale kosten : €%.2f\n", cost[0]);
                     System.out.print("Werp het geld nu in.\n");
                     System.out.println("----------");
                     System.out.println("(=========)");
@@ -63,10 +63,10 @@ public class Main {
                 break;
 
                 case 2:
-                budget = 15-cost[2];
+                budget = 15-cost[1];
                 System.out.println("Uw nieuwe budget is " + "€" + budget);
                     //print de totale kosten die berekend zijn
-                    System.out.printf("Totale kosten : €%.2f\n", cost[2]);
+                    System.out.printf("Totale kosten : €%.2f\n", cost[1]);
                     System.out.print("Werp het geld nu in.\n");
                 break;
 
