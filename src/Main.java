@@ -57,10 +57,10 @@ public class Main {
             //print de arraylist drinken
             if (EtenDrinken == 2) {
                 for (int i = 0; i < ProdDrinken.size(); i++) {
-                    System.out.println(i + 1 + ". " + ProdDrinken.get(i));
+                    System.out.println(i + 4 + ". " + ProdDrinken.get(i));
                 }
             }
-            System.out.println("Wat wilt u bestellen? uw bedget is €" + budget);
+            System.out.println("Wat wilt u bestellen? uw budget is €" + budget);
 
             int choice = sc.nextInt();
             switch (choice) {
@@ -72,17 +72,12 @@ public class Main {
                     System.out.printf("Totale kosten : €%.2f\n", cost[0]);
                     System.out.print("Werp het geld nu in.\n");
 
-                if (EtenDrinken == 1) {
+                    //voegt je keuze toe aan een array
                     Bestelling.add("----------");
                     Bestelling.add("(=========)");
                     Bestelling.add("----------\n");
-                }
-                if (EtenDrinken == 2) {
-                        Bestelling.add("(----------)");
-                        Bestelling.add("|----------|");
-                        Bestelling.add("|----------|");
-                        Bestelling.add("(----------)\n");
-                }
+
+
                 break;
 
                 case 2:
@@ -91,6 +86,12 @@ public class Main {
                     //print de totale kosten die berekend zijn
                     System.out.printf("Totale kosten : €%.2f\n", cost[1]);
                     System.out.print("Werp het geld nu in.\n");
+
+                    //voegt je keuze toe aan een array
+                    Bestelling.add("[___________]");
+                    Bestelling.add("[__SNICKER__]");
+                    Bestelling.add("[___________]\n");
+
                     break;
 
                 case 3:
@@ -99,6 +100,44 @@ public class Main {
                     //print de totale kosten die berekend zijn
                     System.out.printf("Totale kosten : €%.2f\n", cost[2]);
                     System.out.print("Werp het geld nu in.\n");
+
+                    //voegt je keuze toe aan een array
+                    Bestelling.add("[__________]");
+                    Bestelling.add("[___MARS___]");
+                    Bestelling.add("[__________]\n");
+
+                    break;
+
+                case 4:
+                    budget -= cost[3];
+                    System.out.println("Uw nieuwe budget is " + "€" + budget);
+                    //print de totale kosten die berekend zijn
+                    System.out.printf("Totale kosten : €%.2f\n", cost[3]);
+                    System.out.print("Werp het geld nu in.\n");
+
+                    //voegt je keuze toe aan een array
+                    Bestelling.add("(----------)");
+                    Bestelling.add("|=========|");
+                    Bestelling.add("|==COLA===|");
+                    Bestelling.add("|=========|");
+                    Bestelling.add("(----------)\n");
+
+                    break;
+
+                case 5:
+                    budget -= cost[4];
+                    System.out.println("Uw nieuwe budget is " + "€" + budget);
+                    //print de totale kosten die berekend zijn
+                    System.out.printf("Totale kosten : €%.2f\n", cost[4]);
+                    System.out.print("Werp het geld nu in.\n");
+
+                    //voegt je keuze toe aan een array
+                    Bestelling.add("(----------)");
+                    Bestelling.add("|=========|");
+                    Bestelling.add("|==FANTA==|");
+                    Bestelling.add("|=========|");
+                    Bestelling.add("(----------)\n");
+
                     break;
             }
 
@@ -117,7 +156,10 @@ public class Main {
         while (answer.equalsIgnoreCase("ja")) ;
         if (answer.equalsIgnoreCase("nee")) {
 
+            //print je bestelling in ascii art en daarna sluit hij af
             Bestelling.forEach(System.out::println);
+            System.out.println("Bedankt voor uw aankoop!");
+            System.out.println("Fijne dag verder!");
             System.exit(1);
         }
 
