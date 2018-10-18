@@ -1,4 +1,4 @@
-# vendingmachine 
+# Vendingmachine 
 
 ### Wat is het?
 Dit is een kleine applicatie waarbij je keuzes kan maken uit verschillende artikelen.
