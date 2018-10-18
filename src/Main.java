@@ -1,21 +1,22 @@
 import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
-
+    //zorgt voor rode text bij een foutmelding
     public static final String ANSI_RED = "\u001B[31m";
     public static final String ANSI_RESET = "\u001B[0m";
-    public static HashMap<String, Double> items = new HashMap<String, Double>();
+    //dit zijn alle aangemaakte arratlists
     public static ArrayList<String> ProdID =new ArrayList<String>();
     public static ArrayList<String> ProdDrinken =new ArrayList<String>();
     public static ArrayList<String> Bestelling =new ArrayList<String>();
 
     public Scanner sc = new Scanner(System.in);
+    //zet de kosten van de producten
     public double[] cost = {2.15, 1.00, 1.00, 1.10, 1.10};
     public int id;
     public String answer;
+    //zet het begin budet
     public double budget = 15;
 
     public static void main(String[] args) {
@@ -27,7 +28,7 @@ public class Main {
 
     public void start() {
 
-        //Producten geadd aan de arraylist
+        //add producten aan de arraylist
         ProdID.add("Broodje frikandel €" + cost[0] );
         ProdID.add("Snicker €" + cost[1] );
         ProdID.add("Mars €" + cost[2] );
@@ -42,8 +43,7 @@ public class Main {
 
             Scanner scan = new Scanner(System.in);
             int EtenDrinken = scan.nextInt();
-            //1 == Eten  2 == Drinken
-
+            //1 = Eten  2 = Drinken
             System.out.println("Voer het nummer in van het product.\n");
             System.out.println("Dit zijn onze artikelen: ");
 
@@ -60,12 +60,15 @@ public class Main {
                     System.out.println(i + 4 + ". " + ProdDrinken.get(i));
                 }
             }
+
+            //geeft aan wat je budget is
             System.out.println("Wat wilt u bestellen? uw budget is €" + budget);
 
             int choice = sc.nextInt();
             switch (choice) {
 
                 case 1:
+                    //haalt de kosten van het product van het budget af
                     budget -= cost[0];
                     System.out.println("Uw nieuwe budget is " + "€" + budget);
                     //print de totale kosten die berekend zijn
@@ -73,14 +76,15 @@ public class Main {
                     System.out.print("Werp het geld nu in.\n");
 
                     //voegt je keuze toe aan een array
-                    Bestelling.add("----------");
+                    Bestelling.add("{----------}");
                     Bestelling.add("(=========)");
-                    Bestelling.add("----------\n");
+                    Bestelling.add("{----------}\n");
 
 
                 break;
 
                 case 2:
+                    //haalt de kosten van het product van het budget af
                     budget -= cost[1];
                     System.out.println("Uw nieuwe budget is " + "€" + budget);
                     //print de totale kosten die berekend zijn
@@ -95,6 +99,7 @@ public class Main {
                     break;
 
                 case 3:
+                    //haalt de kosten van het product van het budget af
                     budget -= cost[2];
                     System.out.println("Uw nieuwe budget is " + "€" + budget);
                     //print de totale kosten die berekend zijn
@@ -109,6 +114,7 @@ public class Main {
                     break;
 
                 case 4:
+                    //haalt de kosten van het product van het budget af
                     budget -= cost[3];
                     System.out.println("Uw nieuwe budget is " + "€" + budget);
                     //print de totale kosten die berekend zijn
@@ -125,6 +131,7 @@ public class Main {
                     break;
 
                 case 5:
+                    //haalt de kosten van het product van het budget af
                     budget -= cost[4];
                     System.out.println("Uw nieuwe budget is " + "€" + budget);
                     //print de totale kosten die berekend zijn
@@ -142,7 +149,7 @@ public class Main {
             }
 
             if (budget < 0) {
-                //stopt met executen als het bedrag boven het budget is
+                //stopt met executen als het budget onder 0 euro is
                 System.out.println(ANSI_RED + "U heeft te weinig saldo!");
                 System.out.println("Neem uw geld terug." + ANSI_RESET);
                 System.exit(1);
@@ -160,6 +167,8 @@ public class Main {
             Bestelling.forEach(System.out::println);
             System.out.println("Bedankt voor uw aankoop!");
             System.out.println("Fijne dag verder!");
+            //Geeft aan hoeveel euro je overhebt
+            System.out.println("Uw heeft € " + budget + " over");
             System.exit(1);
         }
 
