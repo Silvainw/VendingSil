@@ -29,11 +29,11 @@ public class Main {
     public void start() {
 
         //add producten aan de arraylist
-        ProdID.add("Broodje frikandel €" + cost[0] );
-        ProdID.add("Snicker €" + cost[1] );
-        ProdID.add("Mars €" + cost[2] );
-        ProdDrinken.add("Cola €" + cost[3] );
-        ProdDrinken.add("Fanta €" + cost[4] );
+        ProdID.add("Gevulde koek €" + cost[0] );
+        ProdID.add("Maltesers €" + cost[1] );
+        ProdID.add("Snicker €" + cost[2] );
+        ProdDrinken.add("Fanta €" + cost[3] );
+        ProdDrinken.add("Aquarius €" + cost[4] );
 
         do {
             //print de eerste zinnetjes
@@ -76,9 +76,9 @@ public class Main {
                     System.out.print("Werp het geld nu in.\n");
 
                     //voegt je keuze toe aan een array
-                    Bestelling.add("{----------}");
-                    Bestelling.add("(=========)");
-                    Bestelling.add("{----------}\n");
+                    Bestelling.add("{====================}");
+                    Bestelling.add("(=====Gevuldekoek====)");
+                    Bestelling.add("{====================}\n");
 
 
                 break;
@@ -92,9 +92,9 @@ public class Main {
                     System.out.print("Werp het geld nu in.\n");
 
                     //voegt je keuze toe aan een array
-                    Bestelling.add("[___________]");
-                    Bestelling.add("[__SNICKER__]");
-                    Bestelling.add("[___________]\n");
+                    Bestelling.add("[=============]");
+                    Bestelling.add("[==MALTESERS==]");
+                    Bestelling.add("[=============]\n");
 
                     break;
 
@@ -107,9 +107,9 @@ public class Main {
                     System.out.print("Werp het geld nu in.\n");
 
                     //voegt je keuze toe aan een array
-                    Bestelling.add("[__________]");
-                    Bestelling.add("[___MARS___]");
-                    Bestelling.add("[__________]\n");
+                    Bestelling.add("[=============]");
+                    Bestelling.add("[===SNICKER===]");
+                    Bestelling.add("[=============]\n");
 
                     break;
 
@@ -123,9 +123,9 @@ public class Main {
 
                     //voegt je keuze toe aan een array
                     Bestelling.add("(----------)");
-                    Bestelling.add("|=========|");
-                    Bestelling.add("|==COLA===|");
-                    Bestelling.add("|=========|");
+                    Bestelling.add("|==========|");
+                    Bestelling.add("|==FANTA===|");
+                    Bestelling.add("|==========|");
                     Bestelling.add("(----------)\n");
 
                     break;
@@ -139,11 +139,11 @@ public class Main {
                     System.out.print("Werp het geld nu in.\n");
 
                     //voegt je keuze toe aan een array
-                    Bestelling.add("(----------)");
-                    Bestelling.add("|=========|");
-                    Bestelling.add("|==FANTA==|");
-                    Bestelling.add("|=========|");
-                    Bestelling.add("(----------)\n");
+                    Bestelling.add("(------------)");
+                    Bestelling.add("|============|");
+                    Bestelling.add("|==AQUARIUS==|");
+                    Bestelling.add("|============|");
+                    Bestelling.add("(------------)\n");
 
                     break;
             }
